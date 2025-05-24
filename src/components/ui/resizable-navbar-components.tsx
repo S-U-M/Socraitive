@@ -2,6 +2,7 @@
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react';
+import Link from 'next/link';
 
 import React, { useRef, useState } from 'react';
 
@@ -112,12 +113,12 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
-          onMouseEnter={() => setHovered(idx)}
+        <Link
+          href={item.link}
+          key={`link-${idx}`}
           onClick={onItemClick}
           className="relative px-4 py-2 text-zinc-400 transition-colors duration-200 hover:text-white"
-          key={`link-${idx}`}
-          href={item.link}
+          onMouseEnter={() => setHovered(idx)}
         >
           {hovered === idx && (
             <motion.div
@@ -155,7 +156,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             </motion.div>
           )}
           <span className="relative z-20">{item.name}</span>
-        </a>
+        </Link>
       ))}
     </motion.div>
   );
@@ -227,9 +228,9 @@ export const MobileNavToggle = ({ isOpen, onClick }: { isOpen: boolean; onClick:
 
 export const NavbarLogo = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <a href="/" className="relative z-20 mr-4 flex items-center gap-2 font-medium">
+    <Link href="/" className="relative z-20 mr-4 flex items-center gap-2 font-medium">
       {children}
-    </a>
+    </Link>
   );
 };
 
@@ -261,6 +262,52 @@ export const NavbarButton = ({
     gradient: 'bg-gradient-to-r from-[#4CAF50] to-[#8BC34A] text-white hover:shadow-lg',
   };
 
+  // For internal navigation with Next.js routes
+  if (href && !href.startsWith('http') && Tag === 'a') {
+    return (
+      <Link href={href} passHref legacyBehavior>
+        <a
+          className={cn(baseStyles, variantStyles[variant], className)}
+          onClick={onClick}
+          {...(props as React.ComponentPropsWithoutRef<'a'>)}
+        >
+          {/* Inner animation effect for primary and gradient buttons */}
+          {(variant === 'primary' || variant === 'gradient') && (
+            <motion.span
+              className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100"
+              initial={{ x: '-100%' }}
+              animate={{ x: '100%' }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.5,
+                ease: 'linear',
+                repeatType: 'loop',
+              }}
+            />
+          )}
+
+          {/* Secondary button hover effect */}
+          {variant === 'secondary' && (
+            <motion.span
+              className="absolute inset-0 -z-10 bg-gradient-to-r from-[#4CAF50]/0 via-[#4CAF50]/5 to-[#4CAF50]/0 opacity-0 group-hover:opacity-100"
+              initial={{ x: '-100%' }}
+              animate={{ x: '200%' }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                ease: 'easeInOut',
+                repeatType: 'loop',
+              }}
+            />
+          )}
+
+          {children}
+        </a>
+      </Link>
+    );
+  }
+
+  // For external links or when Tag is not 'a'
   return (
     <Tag
       href={href || undefined}

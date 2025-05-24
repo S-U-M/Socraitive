@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { GitHubLogoIcon, HeartFilledIcon } from '@radix-ui/react-icons';
 
-export const Footer: React.FunctionComponent = (): JSX.Element => {
+export const Footer: React.FunctionComponent = (): React.ReactNode => {
   return (
     <footer className="border-t border-zinc-800 bg-black px-4 py-16 md:px-12">
       <div className="mx-auto max-w-6xl">

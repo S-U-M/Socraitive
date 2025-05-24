@@ -146,6 +146,8 @@ export const Therapy = () => {
         variableValues: {
           userName: 'Honey',
         },
+        clientMessages: [],
+        serverMessages: [],
       });
       console.log('CALL DATA:', call);
 

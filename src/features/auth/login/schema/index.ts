@@ -8,5 +8,5 @@ export const loginSchema = z.object({
     .regex(/^[A-Za-z0-9!@#$%^&*()_+=\-`~,.<>?/;:'"\[\]{}|]+$/, {
       message: 'Password contains invalid characters.',
     }),
-  rememberMe: z.boolean().default(false),
+  rememberMe: z.boolean(),
 });
