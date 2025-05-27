@@ -65,7 +65,7 @@ export const ResizableNavbar: React.FC = () => {
           >
             <span>Book a Demo</span>
           </NavbarButton>
-          <NavbarButton variant="primary" href="/login">
+          <NavbarButton variant="primary" href="/therapist">
             Get Started
           </NavbarButton>
         </div>
@@ -115,7 +115,12 @@ export const ResizableNavbar: React.FC = () => {
             >
               <span>Book a Demo</span>
             </NavbarButton>
-            <NavbarButton href="/login" onClick={() => setIsMobileMenuOpen(false)} variant="primary" className="w-full">
+            <NavbarButton
+              href="/therapist"
+              onClick={() => setIsMobileMenuOpen(false)}
+              variant="primary"
+              className="w-full"
+            >
               Get Started
             </NavbarButton>
           </div>
