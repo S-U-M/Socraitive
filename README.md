@@ -1,33 +1,22 @@
-### **Socraitive - AI Powered voice-to-voice Interviewer**
+# 🌿 Emma – Your AI Therapist
 
-[PROJECT LINK](https://alias-socraitive.vercel.app/) and
-[Video Demo](https://drive.google.com/file/d/1kHunKLZFo0IEZz2rejqzprPTrhAvLiuj/view?usp=sharing)
+**Emma** is a voice- and text-enabled AI Therapist that offers private, on-demand emotional support using evidence-based therapeutic techniques. Whether you're anxious, overwhelmed, or simply need to talk, Emma listens — without judgment, without waiting.
 
-### Current Workflow
+## 💡 Why Emma?
 
-The application allows users to record their voice, which is converted to text using Speech-to-Text (STT). This text is then sent to the OpenAI API for processing, and the generated response is converted back to speech using Text-to-Speech (TTS) for the user to hear.
+Millions struggle with mental health support because of:
 
-`Voice Recording --> Speech-to-Text (STT) --> OpenAI API Call --> Generated Response --> Text-to-Speech (TTS) --> User Hears Response`
+- 🕒 Weeks–months of therapist waitlists  
+- 🧾 High costs of sessions and subscriptions  
+- 🧍 Difficulty opening up to strangers  
+- 🚨 No one to talk to in emotional emergencies  
 
-### Features
+**Emma solves this** by being available 24/7 for calming, reflective, human-like conversations — powered by advanced AI, built ethically, and designed for real emotional connection.
 
-- **Voice-Activated Dialogue (VAD):** Uses a Voice Activity Detection (VAD) system that detects silence to enable automatic turn-taking, creating a natural conversational flow without the need for manual prompts.
-- **Speech-to-Text (STT) Integration:** Converts spoken answers into text for processing.
-- **Text-to-Speech (TTS) Responses:** AI-generated responses are played back via TTS.
-- **Smooth UI Components:** Built with tailwind, providing a clean, responsive user interface.
+## 🧠 Core Features
 
-### Project Structure
-
-```plaintext
-src
-├── commons          # Reusable libraries, utilities, hooks, and UI components
-│   ├── lib          # Helper functions and utilities
-│   ├── components   # Common components & external
-│   ├── hooks        # Custom React hooks
-│   └── styles       # Global styles
-│   └── services     # Common services
-├── app              # Main application code
-│   ├── api          # API routes and handlers
-├── modules          # UI sections and specific components for different screens
-└── services         # External service integrations (e.g., TTS, STT)
-```
+- **24/7 Real-Time Support** – Talk to Emma anytime via voice or chat  
+- **Therapeutic Intelligence** – Built on CBT, mindfulness, and emotional grounding  
+- **Emotionally Aware Conversations** – Emma adapts to tone, intensity, and context  
+- **Privacy-First** – No tracking. No judgment. Full confidentiality  
+- **Voice or Text Interface** – Speak or type, depending on your comfort
