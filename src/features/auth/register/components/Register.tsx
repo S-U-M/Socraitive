@@ -1,24 +1,23 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { motion } from 'motion/react';
-import { HeartFilledIcon, ReloadIcon } from '@radix-ui/react-icons';
+import { useRouter } from 'next/navigation';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { GalaxySpots } from '@/components/ui/galaxy-spots';
-import { SparklesEffect } from '@/components/ui/sparkles-effect';
-import { BackgroundBeams } from '@/components/ui/background-beams';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Checkbox } from '@/components/ui/checkbox';
+import { motion } from 'motion/react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import { registerSchema } from '../schema';
 import { RegisterFormValues } from '../types';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import { GalaxySpots } from '@/components/ui/galaxy-spots';
+import { SparklesEffect } from '@/components/ui/sparkles-effect';
+import { HeartFilledIcon, ReloadIcon } from '@radix-ui/react-icons';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 
 export const Register = () => {
   const router = useRouter();
@@ -44,8 +43,7 @@ export const Register = () => {
 
   return (
     <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
-      <BackgroundBeams />
-      <GalaxySpots count={20} />
+      <GalaxySpots />
       <SparklesEffect />
 
       <div className="container z-10 w-full max-w-lg px-4">

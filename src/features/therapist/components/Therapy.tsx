@@ -11,7 +11,6 @@ import { TherapyEnd } from './TherapyEnd';
 import { TherapyStart } from './TherapyStart';
 import { TherapyHeader } from './TherapyHeader';
 import { FeedbackReport } from './FeedbackReport';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 import { SparklesEffect } from '@/components/ui/sparkles-effect';
 
 type TherapyStatus = 'notStarted' | 'ongoing' | 'ended' | 'error' | 'report';
@@ -198,7 +197,6 @@ export const Therapy = () => {
 
   return (
     <section className="flex w-full max-w-4xl flex-col px-4 py-4 backdrop-blur-sm">
-      <BackgroundBeams />
       <SparklesEffect />
       <TherapyHeader />
 

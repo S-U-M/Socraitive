@@ -3,15 +3,16 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { HeartFilledIcon, StarFilledIcon, ChatBubbleIcon } from '@radix-ui/react-icons';
 import { ShieldIcon, ChevronRight, Sparkles } from 'lucide-react';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 import { Marquee } from '@/components/ui/marquee';
+import { GalaxySpots } from '@/components/ui/galaxy-spots';
+import { SparklesEffect } from '@/components/ui/sparkles-effect';
 
 export const Partnerships = () => {
   return (
     <>
       <section className="relative w-full overflow-hidden bg-black py-24 text-white md:py-24">
-        <BackgroundBeams />
-
+        <GalaxySpots />
+        <SparklesEffect />
         {/* Gradient orbs */}
         <motion.div
           initial={{ opacity: 0 }}

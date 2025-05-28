@@ -3,22 +3,22 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { motion } from 'motion/react';
-import { HeartFilledIcon, ReloadIcon } from '@radix-ui/react-icons';
 
+import { motion } from 'motion/react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { z } from 'zod';
+import { loginSchema } from '../schema';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
 import { GalaxySpots } from '@/components/ui/galaxy-spots';
 import { SparklesEffect } from '@/components/ui/sparkles-effect';
-import { BackgroundBeams } from '@/components/ui/background-beams';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { HeartFilledIcon, ReloadIcon } from '@radix-ui/react-icons';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Checkbox } from '@/components/ui/checkbox';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 
-import { loginSchema } from '../schema';
-import { z } from 'zod';
 
 export const Login = () => {
   const router = useRouter();
@@ -41,8 +41,7 @@ export const Login = () => {
 
   return (
     <>
-      <BackgroundBeams />
-      <GalaxySpots count={30} />
+      <GalaxySpots />
       <SparklesEffect />
 
       <div className="container w-full max-w-lg px-4">

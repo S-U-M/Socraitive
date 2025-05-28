@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { motion, useInView } from 'motion/react';
 import { HeartFilledIcon, LightningBoltIcon } from '@radix-ui/react-icons';
 import { ChevronRight, Users, Bot, MousePointerClick } from 'lucide-react';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 import { SparklesEffect } from '@/components/ui/sparkles-effect';
 import { BorderGradient } from '@/components/ui/border-gradient';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
+import { GalaxySpots } from '@/components/ui/galaxy-spots';
 
 export const Hero = () => {
   const statsRef = useRef(null);
@@ -18,7 +18,7 @@ export const Hero = () => {
     <>
       <section className="relative flex min-h-[85vh] w-full flex-col items-center overflow-hidden bg-black py-16 md:py-24">
         {/* Aceternity-inspired background effects */}
-        <BackgroundBeams />
+        <GalaxySpots />
         <SparklesEffect />
         <motion.div
           className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(76,175,80,0.12),transparent_70%)]"
