@@ -47,8 +47,24 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-12 md:mt-16"
+            className="mt-12 md:mt-10"
           >
+            {/* Manifesto pill */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-6"
+            >
+              <Link
+                href="/manifesto"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#4CAF50]/20 bg-[#4CAF50]/5 px-6 py-1 text-xs text-[#4CAF50] transition-all hover:border-[#4CAF50]/40 hover:bg-[#4CAF50]/10"
+              >
+                <span>Read our Manifesto</span>
+                <ChevronRight className="size-3 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </motion.div>
+
             <Typography
               as="h1"
               variant="h1"
@@ -69,7 +85,6 @@ export const Hero = () => {
               </Typography>
             </motion.div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,7 +130,7 @@ export const Hero = () => {
               >
                 <Link href="#features">
                   <span className="text-white">Learn More</span>
-                  <ChevronRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
+                  <ChevronRight color="white" className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                   <motion.span
                     className="absolute inset-0 -z-10 bg-gradient-to-r from-[#4CAF50]/0 via-[#4CAF50]/5 to-[#4CAF50]/0"
                     initial={{ opacity: 0 }}
@@ -126,7 +141,6 @@ export const Hero = () => {
               </Button>
             </motion.div>
           </motion.div>
-
           {/* Video demo with gradient border */}
           <BorderGradient containerClassName="w-full max-w-4xl mt-6 md:mt-8">
             <Card className="overflow-hidden border-none bg-zinc-900/80 backdrop-blur-sm">
@@ -146,7 +160,6 @@ export const Hero = () => {
               </motion.div>
             </Card>
           </BorderGradient>
-
           {/* Stats bar with improved animations */}
           <motion.div
             ref={statsRef}
@@ -222,7 +235,6 @@ export const Hero = () => {
               </motion.div>
             ))}
           </motion.div>
-
           {/* Scroll indicator */}
           <motion.div
             className="relative top-14 max-sm:top-10"
