@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { NextPage } from 'next';
+import { NextPage, Metadata } from 'next';
+import { Footer } from '@/components/custom';
 import { Manifesto } from '@/features/landing/components';
-import { Header, Footer } from '@/components/custom';
-import { Metadata } from 'next';
+import { ResizableNavbar } from '@/components/ui/resizable-navbar';
 
 export const metadata: Metadata = {
   title: 'Manifesto - Emma AI Therapist | Mental Health Revolution',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const ManifestoPage: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
-      <Header />
+      <ResizableNavbar showNavItems={false} />
 
       <main className="flex flex-1 flex-col">
         <Manifesto />

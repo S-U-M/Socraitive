@@ -12,9 +12,13 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from '@/components/ui/resizable-navbar-components';
-import { HeartFilledIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
+import { HeartFilledIcon } from '@radix-ui/react-icons';
 
-export const ResizableNavbar: React.FC = () => {
+interface ResizableNavbarProps {
+  showNavItems?: boolean;
+}
+
+export const ResizableNavbar: React.FC<ResizableNavbarProps> = ({ showNavItems = true }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -35,6 +39,7 @@ export const ResizableNavbar: React.FC = () => {
       link: '#faq',
     },
   ];
+
   return (
     <Navbar>
       {/* Desktop Navigation */}
@@ -52,7 +57,7 @@ export const ResizableNavbar: React.FC = () => {
           </div>
         </NavbarLogo>
 
-        <NavItems items={navItems} />
+        {showNavItems && <NavItems items={navItems} />}
 
         <div className="relative z-20 flex items-center gap-4">
           <NavbarButton
@@ -88,21 +93,21 @@ export const ResizableNavbar: React.FC = () => {
           </NavbarLogo>
 
           <MobileNavToggle isOpen={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
-        </MobileNavHeader>
-
+        </MobileNavHeader>{' '}
         <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
-          {navItems.map((item, idx) => (
-            <a
-              key={`mobile-link-${idx}`}
-              href={item.link}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="group relative py-2 text-zinc-400 transition-colors duration-200 hover:text-white"
-            >
-              <span className="block">{item.name}</span>
-              {/* Animated underline on hover */}
-              <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-gradient-to-r from-[#4CAF50] to-[#8BC34A] transition-all duration-300 ease-out group-hover:w-full"></span>
-            </a>
-          ))}
+          {showNavItems &&
+            navItems.map((item, idx) => (
+              <a
+                key={`mobile-link-${idx}`}
+                href={item.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="group relative py-2 text-zinc-400 transition-colors duration-200 hover:text-white"
+              >
+                <span className="block">{item.name}</span>
+                {/* Animated underline on hover */}
+                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-gradient-to-r from-[#4CAF50] to-[#8BC34A] transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+            ))}
           <div className="mt-4 flex w-full flex-col gap-4">
             <NavbarButton
               as="a"
