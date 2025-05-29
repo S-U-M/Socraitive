@@ -58,9 +58,9 @@ export const Hero = () => {
             >
               <Link
                 href="/manifesto"
-                className="group inline-flex items-center gap-2 rounded-full border border-[#4CAF50]/20 bg-[#4CAF50]/5 px-6 py-1 text-xs text-[#4CAF50] transition-all hover:border-[#4CAF50]/40 hover:bg-[#4CAF50]/10"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#4CAF50]/20 bg-[#4CAF50]/5 px-6 py-1 text-xs transition-all hover:border-[#4CAF50]/40 hover:bg-[#4CAF50]/10"
               >
-                <span>Read our Manifesto</span>
+                <span className="text-[#4CAF50]">Read our Manifesto</span>
                 <ChevronRight className="size-3 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </motion.div>

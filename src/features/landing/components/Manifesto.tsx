@@ -264,7 +264,7 @@ export const Manifesto = () => {
             <div className="relative z-10 flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
               <div>
                 <h3 className="mb-3 text-2xl font-bold text-white md:text-3xl">Join the Revolution</h3>
-                <p className="max-w-md text-zinc-400">
+                <p className="max-w-2xl text-zinc-400">
                   Be part of a movement that's transforming mental healthcare. Experience Emma today and discover what
                   compassionate, accessible AI support feels like. Together, we can create a world where no one suffers
                   alone.
