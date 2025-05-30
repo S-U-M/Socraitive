@@ -16,7 +16,7 @@ export const Hero = () => {
 
   return (
     <>
-      <section className="relative flex min-h-[85vh] w-full flex-col items-center overflow-hidden bg-black py-16 md:py-24">
+      <section className="relative flex min-h-[85vh] w-full flex-col items-center overflow-hidden bg-black py-16 md:py-32">
         {/* Aceternity-inspired background effects */}
         <GalaxySpots />
         <SparklesEffect />
