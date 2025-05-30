@@ -46,12 +46,15 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
   const [visible, setVisible] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     // Show the smaller navbar when scrolling down, hide when at the top
-    if (latest > 50) {
+    if (latest > 100) {
       setVisible(true);
     } else {
       setVisible(false);
@@ -59,7 +62,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   });
 
   return (
-    <motion.div ref={ref} className={cn('fixed inset-x-0 top-0 z-40 w-full', className)}>
+    <motion.div ref={ref} className={cn('fixed inset-x-0 top-5 z-40 w-full', className)}>
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(child as React.ReactElement<{ visible?: boolean }>, { visible })
